@@ -38,7 +38,6 @@ def get_weather(city, use_cache=True):
     cache = load_cache()
     current_time = time.time()
 
-    # Check local cache first
     if use_cache and city_key in cache:
         cached_data = cache[city_key]
         if current_time - cached_data["timestamp"] < CACHE_DURATION:
